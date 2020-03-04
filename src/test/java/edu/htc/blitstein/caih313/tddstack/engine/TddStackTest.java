@@ -60,4 +60,49 @@ public class TddStackTest {
         IStackable iStackablePopped = tddStack.pop();
         assertEquals(iStackableOrig, iStackablePopped);
     }
+
+    @Test
+    public void testIsFull(){
+        TddStack stack = new TddStack(4);
+        for(int i = 0; i < 4; i++){
+            Student myStudent = new Student();
+            stack.push(myStudent);
+        }assertTrue(stack.isFull());
+    }
+
+    @Test
+    public void overFill(){
+        TddStack stack = new TddStack(4);
+        for(int i = 0; i < 6; i++){
+            Student myStudent = new Student();
+            stack.push(myStudent);
+        }assertEquals(4, stack.stackDepth);
+    }
+
+    @Test
+    public void pushPop(){
+        TddStack tddStack =  new TddStack(1);
+        Student student = new Student();
+        tddStack.push(student);
+        tddStack.pop();
+        assertTrue(tddStack.isEmpty());
+        assertFalse(tddStack.isFull());
+    }
+
+    @Test
+    public void emptyFullStack(){
+        TddStack stack = new TddStack(TddStack.DEFAULT_DEPTH);
+        for(int i = 0; i < 100; i++){
+            stack.pop();
+        }assertTrue(stack.isEmpty());
+    }
+
+    @Test
+    public void gotPushed(){
+        TddStack tddStack = new TddStack();
+        IStackable student = new Student();
+        tddStack.push(student);
+        IStackable popped = tddStack.pop();
+        assertEquals(student, popped);
+    }
 }
