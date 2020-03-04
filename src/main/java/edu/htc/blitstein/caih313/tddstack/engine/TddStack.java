@@ -45,4 +45,3 @@ public class TddStack {
 
 
 }
-//add a couple of more tests to demonstrate the stack is working as expected, that would be sufficient. For example, add an id field to the classes that implement IStackable and demonstrate that precisely the objects you pushed onto the stack were the same ones pop'd and in the right order.  Please let me know if you need more clarification.
